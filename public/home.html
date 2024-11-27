@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloomBox - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/homestyle.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #173231;">
+        <div class="container justify-content-center text-center">
+            <a class="navbar-brand d-block mb-4" href="home.html">
+                <img src="../public/assets/images/bloombox10.png" alt="BloomBox Logo" class="img-fluid">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav d-flex justify-content-center w-100">
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#catalog">Catalog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="account.html">Account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">My Plants</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Subscription</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Notifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-light text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Welcome to BloomBox</h1>
+            <p class="lead">Your one-stop platform for plant care, swaps, and subscriptions.</p>
+        </div>
+    </header>
+
+    <!-- Overview Section -->
+    <section id="about" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">About BloomBox</h2>
+            <p>BloomBox is an innovative e-commerce platform dedicated to plant enthusiasts. Discover customized care kits, real-time plant health tracking, and a vibrant community of plant lovers.</p>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section id="catalog" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center">Explore Our Catalog</h2>
+            <p class="text-center">Search, filter, and find the perfect plant for your home.</p>
+            <div class="d-flex justify-content-center">
+                <input type="text" class="form-control w-50 me-3" placeholder="Search plants...">
+                <button class="btn btn-success me-3">Search</button>
+                <button class="btn btn-primary" onclick="location.href='catalog.html'">View Full Catalog</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Plants Section -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Featured Plants</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Plant 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Peace Lily</h5>
+                            <p class="card-text">A low-maintenance plant that purifies air.</p>
+                            <a href="shop.html" class="btn btn-success">Explore More</a> <!-- Explore More button -->
+                            <a href="shop.html" class="btn btn-outline-success mt-2">Go to Shop</a> <!-- New Shop button -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Plant 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Fiddle Leaf Fig</h5>
+                            <p class="card-text">Elegant and bold, perfect for home decor.</p>
+                            <a href="shop.html" class="btn btn-success">Explore More</a> <!-- Explore More button -->
+                            <a href="shop.html" class="btn btn-outline-success mt-2">Go to Shop</a> <!-- New Shop button -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Plant 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Snake Plant</h5>
+                            <p class="card-text">Known for its resilience and air-purifying qualities.</p>
+                            <a href="shop.html" class="btn btn-success">Explore More</a> <!-- Explore More button -->
+                            <a href="shop.html" class="btn btn-outline-success mt-2">Go to Shop</a> <!-- New Shop button -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Our Services</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <a href="#" class="btn btn-success w-100 py-3">
+                        <h3> Plant Care Kits </h3>
+                        <p>Customized kits for every plant species.</p>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" class="btn btn-success w-100 py-3">
+                        <h3> Health Monitoring</h3>
+                        <p> Track plant health with real-time insights. </p>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" class="btn btn-success w-100 py-3">
+                        <h3> Plant Swap </h3>
+                        <p>Exchange plants with fellow plant enthusiasts.</p>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" class="btn btn-success w-100 py-3">
+                        <h3> Shop </h3>
+                        <p> Buy plants, planters, and accessories online. </p> 
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Join the Community</h2>
+            <p class="text-center">Connect with fellow plant enthusiasts through swaps, donations, and more.</p>
+            <div class="text-center mt-4">
+                <a href="plant-swap.html" class="btn btn-success">Plant Swap</a>
+                <a href="donate.html" class="btn btn-outline-success ms-3">Donate Plants</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 BloomBox. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="homejs.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+/* Navbar */
+.navbar {
+    border-bottom: 2px solid #fff;
+    padding-top: 30px; /* Added padding for space above logo */
+    background-color: #173231; /* Updated navbar background color */
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.navbar-brand img {
+    max-width: 150px; /* Adjust based on your logo's size */
+    height: auto;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-left: 20px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ddd;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.2rem; 
+        margin-left: 0; 
+    }
+
+    .navbar-toggler-icon {
+        background-color: #28a745; 
+    }
+}
+
+/* Forms for Plant Swap & Donate Sections */
+#plant-swap, #donate {
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    max-width: 800px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Form Headings */
+h2 {
+    color: #28a745;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Form Inputs */
+input[type="text"], input[type="file"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Button Styling */
+button, a.btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover, a.btn:hover {
+    background-color: #218838;
+}
+
+/* Image Upload Styling */
+input[type="file"] {
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.text-center {
+    margin-top: 20px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #plant-swap, #donate {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    button, a.btn {
+        padding: 8px 15px;
+        font-size: 1rem;
+    }
+
+    input[type="text"], input[type="file"], textarea {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .text-center a {
+        font-size: 1rem;
+    }
+}
+
+.btn-outline-success {
+    color: #28a745;
+    border: 2px solid #28a745;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-success:hover {
+    background-color: #28a745;
+    color: white;
+}

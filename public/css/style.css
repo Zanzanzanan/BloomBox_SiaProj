@@ -1,0 +1,129 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+}
+
+.header-container {
+    display: flex; /* Align items in a row */
+    justify-content: space-between; /* Push content to the edges */
+    align-items: center; /* Center items vertically */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the header container */
+}
+
+header h1 {
+    font-size: 1.9rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex; /* Arrange items in a row */
+    gap: 20px; /* Space between items */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    display: inline;
+}
+
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+    color: #e0f7e5; /* Lighter shade on hover */
+}
+
+/* About Section */
+.about {
+    padding: 40px 0;
+    background-color: white;
+    text-align: center;
+}
+
+/* Features Section */
+.features {
+    padding: 40px 0;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    text-align: center;
+}
+
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature-item {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: #f1f8e9;
+    cursor: pointer;
+}
+
+/* CTA Section */
+.cta {
+    background-color: #4CAF50;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.cta button {
+    background-color: white;
+    color: #4CAF50;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta button:hover {
+    background-color: #388E3C;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}

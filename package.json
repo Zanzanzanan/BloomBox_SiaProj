@@ -1,0 +1,16 @@
+{
+  "name": "bloombox-project",
+  "version": "1.0.0",
+  "description": "BloomBox E-Commerce for Plant Enthusiasts",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server",  
+    "build": "npm run build"
+  },
+  "dependencies": {
+    "firebase": "^11.0.2"  
+  },
+  "devDependencies": {},
+  "author": "Your Name",
+  "license": "MIT"
+}

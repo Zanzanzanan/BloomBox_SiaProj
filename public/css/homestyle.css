@@ -1,0 +1,291 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+/* Navbar */
+.navbar {
+    border-bottom: 2px solid #fff;
+    padding-top: 30px; /* Added padding for space above logo */
+    background-color: #173231; /* Updated navbar background color */
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.navbar-brand img {
+    max-width: 150px; /* Adjust based on your logo's size */
+    height: auto;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-left: 20px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ddd;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;
+}
+
+/* Center the navbar items */
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.2rem; /* Adjust font size for easier reading */
+        margin-left: 0; /* Remove left margin for better alignment */
+    }
+
+    .navbar-toggler-icon {
+        background-color: #28a745; /* Change the color to match theme */
+    }
+}
+
+
+
+/* Hero Section */
+header {
+    background-color: #f4f4f4;
+}
+
+header h1 {
+    color: #28a745;
+    font-size: 3.5rem;
+}
+
+header p {
+    color: #555;
+    font-size: 1.2rem;
+}
+
+/* About Section */
+#about {
+    background-color: #f9f9f9;
+}
+
+#about p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Catalog Section */
+#catalog {
+    background-color: #f1f1f1;
+}
+
+#catalog .form-control {
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+
+#catalog button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #28a745;
+    color: white;
+}
+
+#catalog button:hover {
+    background-color: #218838;
+}
+
+#catalog .d-flex {
+    justify-content: center;
+    gap: 1rem; /* Adds space between the input and button */
+}
+
+#catalog .form-control {
+    width: 60%; /* Ensures the input field takes up more space */
+}
+
+#catalog .btn-primary {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+}
+
+#catalog .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+
+/* Featured Plant Cards */
+.card {
+    border: none; /* Removes default card border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.card:hover .card-body {
+    background-color: #f0f0f0; /* Slight background change on hover */
+}
+
+.card:hover .card-title, .card:hover .card-text {
+    color: #28a745; /* Change text color when hovering */
+}
+
+.card-img-top {
+    border-bottom: 2px solid #173231; /* Adds a line under the image */
+}
+
+/* Explore More and Go to Shop Buttons */
+.card .btn-success, .card .btn-outline-success {
+    font-weight: bold;
+    text-transform: uppercase; /* Makes text all caps for emphasis */
+    font-size: 1rem;
+    padding: 10px 20px;
+    width: 100%; /* Makes buttons take up the full width of the card */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 10px; /* Adds space above the button */
+}
+
+.card .btn-success {
+    background-color: #173231; /* Green background for Explore More */
+    color: white;
+    transition: background-color 0.3s ease; /* Smooth color change on hover */
+}
+
+.card .btn-success:hover {
+    background-color: #218c7d; /* Lighter green on hover */
+}
+
+/* Outline Button Style */
+.card .btn-outline-success {
+    color: #173231; /* Green text color */
+    border: 2px solid #173231; /* Green border */
+    background-color: transparent; /* Transparent background */
+}
+
+.card .btn-outline-success:hover {
+    background-color: #173231; /* Green background on hover */
+    color: white; /* White text on hover */
+}
+
+/* Responsive Design for Buttons */
+@media (max-width: 768px) {
+    .card .btn-success, .card .btn-outline-success {
+        font-size: 0.9rem; /* Slightly smaller button text */
+        padding: 8px 15px;
+    }
+}
+
+
+/* Services Section */
+#services .btn {
+    padding: 1.5rem;
+    background-color: #28a745;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+#services .btn:hover {
+    background-color: #218838;
+}
+
+#services h3 {
+    font-size: 1.5rem;
+    color: white;
+}
+
+#services p {
+    color: white;
+}
+
+/* Community Section */
+#community {
+    background-color: #e9f7e1;
+}
+
+#community p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+#community .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+}
+
+#community .btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+#community .btn-outline-success {
+    color: #28a745;
+    border-color: #28a745;
+}
+
+#community .btn:hover {
+    background-color: #218838;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .navbar-nav .nav-item {
+        margin-left: 10px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    #catalog .form-control {
+        width: 80%;
+    }
+
+    .row .col-md-4 {
+        flex: 0 0 100%;
+    }
+
+    #services .col-md-3 {
+        flex: 0 0 100%;
+    }
+
+    .btn {
+        padding: 1rem;
+    }
+}
