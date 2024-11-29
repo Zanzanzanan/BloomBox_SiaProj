@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../public/css/plant-detail-styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #173231;">
+        <div class="container justify-content-center text-center">
+            <a class="navbar-brand d-block mb-4" href="home.html">
+                <img src="../public/assets/images/bloombox10.png" alt="BloomBox Logo" class="img-fluid">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav d-flex justify-content-center w-100">
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#catalog">Catalog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="account.html">Account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">My Plants</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Subscription</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Notifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <!-- Back Button -->
+  <div class="container mt-4">
+      <a href="catalog.html" class="btn btn-outline-success">
+          <i class="bi bi-arrow-left-circle"></i> Back to Catalog
+      </a>
+  </div>
+
+  <!-- Plant Details Section -->
+  <div class="plant-details">
+    <div class="row">
+        <div class="col-md-6">
+            <img id="plant-image" src="default-image.jpg" alt="Plant Image">
+            <p id="description">Loading description...</p>
+        </div>
+        <div class="col-md-6">
+            <h2 id="common-name">Loading...</h2>
+            <h4 id="scientific-name">Loading...</h4>
+
+            <h4>Details</h4>
+            <p><strong>Cycle:</strong> <span id="cycle">Loading...</span></p>
+            <p><strong>Watering:</strong> <span id="watering">Loading...</span></p>
+            <p><strong>Propagation:</strong> <span id="propagation">Loading...</span></p>
+            <p><strong>Hardiness Zone:</strong> <span id="hardiness-zone">Loading...</span></p>
+            <p><strong>Flowers:</strong> <span id="flowers">Loading...</span></p>
+            <p><strong>Sun:</strong> <span id="sun">Loading...</span></p>
+            <p><strong>Soil:</strong> <span id="soil">Loading...</span></p>
+            <p><strong>Cones:</strong> <span id="cones">Loading...</span></p>
+            <p><strong>Leaf:</strong> <span id="leaf">Loading...</span></p>
+            <p><strong>Leaf Color:</strong> <span id="leaf-color">Loading...</span></p>
+            <p><strong>Growth Rate:</strong> <span id="growth-rate">Loading...</span></p>
+            <p><strong>Maintenance:</strong> <span id="maintenance">Loading...</span></p>
+            <p><strong>Drought Tolerant:</strong> <span id="drought-tolerant">Loading...</span></p>
+            <p><strong>Care Level:</strong> <span id="care-level">Loading...</span></p>
+        </div>
+    </div>
+  </div>
+
+  <script src="plant-detail-script.js"></script>
+</body>
+</html>

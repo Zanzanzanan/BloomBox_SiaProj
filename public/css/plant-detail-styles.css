@@ -1,0 +1,169 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+.navbar {
+    border-bottom: 2px solid #fff;
+    padding-top: 30px; /* Added padding for space above logo */
+    background-color: #173231; /* Updated navbar background color */
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.navbar-brand img {
+    max-width: 150px; /* Adjust based on your logo's size */
+    height: auto;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-left: 20px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ddd;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;
+}
+
+/* Center the navbar items */
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.2rem; /* Adjust font size for easier reading */
+        margin-left: 0; /* Remove left margin for better alignment */
+    }
+
+    .navbar-toggler-icon {
+        background-color: #28a745; /* Change the color to match theme */
+    }
+}
+
+h2, h4 {
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* Plant Details Section */
+.plant-details {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.plant-details h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.plant-details h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.plant-details img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+/* Plant Description */
+#description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* Details List */
+.plant-details p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.plant-details strong {
+    font-weight: bold;
+    color: #173231;
+}
+
+.plant-details span {
+    color: #555;
+}
+
+/* Loading State */
+#common-name, #scientific-name, #description, #cycle, #watering, #propagation, 
+#hardiness-zone, #flowers, #sun, #soil, #cones, #leaf, #leaf-color, 
+#growth-rate, #maintenance, #drought-tolerant, #care-level {
+    color: #28a745; /* Highlight loading text in green */
+}
+
+#plant-image {
+    border: 2px solid #173231;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .plant-details {
+        padding: 1.5rem;
+    }
+
+    .plant-details h2 {
+        font-size: 2rem;
+    }
+
+    .plant-details h4 {
+        font-size: 1.3rem;
+    }
+
+    #description {
+        font-size: 1rem;
+    }
+}
+/* User Pages Section */
+.user-pages {
+    padding: 40px 0;
+    background-color: #e0f7e5;
+    text-align: center;
+}
+
+.page-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.page-item {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.page-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
