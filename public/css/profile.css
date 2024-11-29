@@ -1,0 +1,157 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    border-bottom: 2px solid #fff;
+    padding-top: 20px;
+    background-color: #173231;
+}
+
+.navbar-brand img {
+    max-width: 150px;
+    height: auto;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-left: 20px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ddd;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.sidebar ul li a:hover {
+    color: #28a745; /* Green color */
+}
+
+/* Profile Section */
+.profile-photo {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    border: 3px solid #28a745; /* Green border for profile picture */
+    margin-bottom: 15px;
+}
+
+/* Main Profile Section */
+.content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    border: none;
+    margin-bottom: 20px;
+}
+
+/* Save Button */
+.save-btn {
+    background-color: #28a745; /* Green color */
+    color: white;
+    font-size: 14px;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+}
+
+.save-btn:hover {
+    background-color: #218838; /* Darker green */
+}
+
+/* Adjust input fields */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 12px;
+    font-size: 16px;
+}
+
+/* Label for input fields */
+.form-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Button Styling for File Upload */
+button[type="button"] {
+    background-color: #6c757d;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 8px 15px;
+    border: none;
+}
+
+button[type="button"]:hover {
+    background-color: #5a6268;
+}
+
+/* Positioning for Save Button */
+.d-flex.justify-content-end {
+    margin-top: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* Adjust profile photo size */
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Adjust layout of profile and form */
+    .col-md-8, .col-md-4 {
+        padding: 15px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .save-btn {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    /* Sidebar adjustments for smaller screens */
+    .sidebar {
+        margin-bottom: 20px;
+    }
+}
