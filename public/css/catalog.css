@@ -10,11 +10,10 @@ h1, h2, h3 {
     font-weight: bold;
 }
 
-/* Navbar */
 .navbar {
     border-bottom: 2px solid #fff;
-    padding-top: 30px; 
-    background-color: #173231; 
+    padding-top: 30px; /* Added padding for space above logo */
+    background-color: #173231; /* Updated navbar background color */
 }
 
 .navbar-brand {
@@ -23,7 +22,6 @@ h1, h2, h3 {
 }
 
 .navbar-brand img {
-    max-width: 150px; 
     height: auto;
 }
 
@@ -55,12 +53,12 @@ h1, h2, h3 {
     }
 
     .navbar-nav .nav-link {
-        font-size: 1.2rem; 
-        margin-left: 0;
+        font-size: 1.2rem; /* Adjust font size for easier reading */
+        margin-left: 0; /* Remove left margin for better alignment */
     }
 
     .navbar-toggler-icon {
-        background-color: #28a745;
+        background-color: #28a745; /* Change the color to match theme */
     }
 }
 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BloomBox - Home</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/homestyle.css">
 </head>
@@ -15,7 +16,8 @@
                 <img src="../public/assets/images/bloombox10.png" alt="BloomBox Logo" class="img-fluid">
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -66,40 +68,18 @@
     <section class="bg-light py-5">
         <div class="container">
             <h2 class="text-center mb-4">Featured Plants</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Plant 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Peace Lily</h5>
-                            <p class="card-text">A low-maintenance plant that purifies air.</p>
-                            <a href="shop.html" class="btn btn-success">Explore More</a> <!-- Explore More button -->
-                            <a href="shop.html" class="btn btn-outline-success mt-2">Go to Shop</a> <!-- New Shop button -->
-                        </div>
-                    </div>
+            <div class="row g-4" id="featured-plants">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+            <!-- Loading Indicator -->
+            <div class="text-center" id="loading-indicator" style="display: none;">
+                <div class="spinner-border text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Plant 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Fiddle Leaf Fig</h5>
-                            <p class="card-text">Elegant and bold, perfect for home decor.</p>
-                            <a href="shop.html" class="btn btn-success">Explore More</a> <!-- Explore More button -->
-                            <a href="shop.html" class="btn btn-outline-success mt-2">Go to Shop</a> <!-- New Shop button -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Plant 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Snake Plant</h5>
-                            <p class="card-text">Known for its resilience and air-purifying qualities.</p>
-                            <a href="shop.html" class="btn btn-success">Explore More</a> <!-- Explore More button -->
-                            <a href="shop.html" class="btn btn-outline-success mt-2">Go to Shop</a> <!-- New Shop button -->
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <!-- Error Message -->
+            <div class="text-center text-danger" id="error-message" style="display: none;">
+                Failed to load featured plants.
             </div>
         </div>
     </section>
@@ -111,26 +91,26 @@
             <div class="row g-4">
                 <div class="col-md-3">
                     <a href="#" class="btn btn-success w-100 py-3">
-                        <h3> Plant Care Kits </h3>
+                        <h3>Plant Care Kits</h3>
                         <p>Customized kits for every plant species.</p>
                     </a>
                 </div>
                 <div class="col-md-3">
                     <a href="#" class="btn btn-success w-100 py-3">
-                        <h3> Health Monitoring</h3>
-                        <p> Track plant health with real-time insights. </p>
+                        <h3>Health Monitoring</h3>
+                        <p>Track plant health with real-time insights.</p>
                     </a>
                 </div>
                 <div class="col-md-3">
                     <a href="#" class="btn btn-success w-100 py-3">
-                        <h3> Plant Swap </h3>
+                        <h3>Plant Swap</h3>
                         <p>Exchange plants with fellow plant enthusiasts.</p>
                     </a>
                 </div>
                 <div class="col-md-3">
                     <a href="#" class="btn btn-success w-100 py-3">
-                        <h3> Shop </h3>
-                        <p> Buy plants, planters, and accessories online. </p> 
+                        <h3>Shop</h3>
+                        <p>Buy plants, planters, and accessories online.</p>
                     </a>
                 </div>
             </div>
@@ -156,7 +136,77 @@
         </div>
     </footer>
 
+    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="homejs.js"></script>
+    
+    <!-- Featured Plants Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const featuredPlantsContainer = document.getElementById('featured-plants');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            const errorMessage = document.getElementById('error-message');
+            const apiKey = 'sk-rglv67474d408f0be7804'; // Replace with your actual API key
+            const apiUrl = `https://perenual.com/api/species-list?key=${apiKey}&page=1&limit=6`; // Fetching 6, but showing only 3
+        
+            // Show loading indicator
+            loadingIndicator.style.display = 'block';
+        
+            // Fetch featured plants from Perenual API
+            async function fetchFeaturedPlants() {
+                try {
+                    const response = await fetch(apiUrl);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+        
+                    // Check the structure of the response
+                    if (!data || !data.data) {
+                        throw new Error('Invalid API response structure');
+                    }
+        
+                    const plants = data.data.slice(0, 3); // Get only the first 3 plants
+        
+                    // Generate plant cards dynamically
+                    plants.forEach(plant => {
+                        const plantName = plant.common_name || plant.name || "Unknown Plant";
+                        const plantDescription = plant.slug || "No description available.";
+                        const plantImage = plant.default_image ? plant.default_image.medium_url : "https://via.placeholder.com/300x200";
+        
+                        const plantCard = `
+                            <div class="col-md-4">
+                                <div class="card h-100">
+                                    <img src="${plantImage}" class="card-img-top" alt="${plantName}">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">${plantName}</h5>
+                                        <p class="card-text">${test}</p>
+                                        <div class="mt-auto">
+                                            <a href="shop.html?id=${plant.id}" class="btn btn-success">Explore More</a>
+                                            <a href="shop.html?id=${plant.id}" class="btn btn-outline-success mt-2">Go to Shop</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        featuredPlantsContainer.insertAdjacentHTML("beforeend", plantCard);
+                    });
+        
+                    // Hide loading indicator after successful load
+                    loadingIndicator.style.display = 'none';
+                } catch (error) {
+                    console.error('Error fetching featured plants:', error);
+                    // Hide loading indicator and show error message
+                    loadingIndicator.style.display = 'none';
+                    errorMessage.style.display = 'block';
+                    errorMessage.textContent = `Failed to load featured plants: ${error.message}`;
+                }
+            }
+        
+            fetchFeaturedPlants();
+        });
+        
+
+                
+    </script>
 </body>
 </html>
