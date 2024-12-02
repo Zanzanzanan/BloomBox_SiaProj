@@ -22,6 +22,7 @@ h1, h2, h3 {
 }
 
 .navbar-brand img {
+    max-width: 150px; /* Adjust based on your logo's size */
     height: auto;
 }
 
