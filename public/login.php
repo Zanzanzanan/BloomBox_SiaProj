@@ -1,9 +1,11 @@
 <?php
+session_start();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $servername = "localhost";
-    $username = "root"; // Adjust if you have different credentials
-    $password = ""; // Adjust password if necessary
-    $dbname = "user_db"; // Ensure the database exists
+    $username = "root";  // Your database username
+    $password = "";      // Your database password
+    $dbname = "user_db"; // Your database name
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -16,20 +18,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['login-email'];
     $password = $_POST['login-password'];
 
-    // Check if the user exists in the database
-    $sql = "SELECT * FROM users WHERE email = '$email'";
-    $result = $conn->query($sql);
+    // Query to check if the user exists
+    $sql = "SELECT id, name, password FROM users WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->store_result();
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        // Verify password
-        if (password_verify($password, $row['password'])) {
-            echo "Login successful!";
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($user_id, $name, $hashed_password);
+        $stmt->fetch();
+
+        // Verify the password
+        if (password_verify($password, $hashed_password)) {
+            // Store user information in session
+            $_SESSION['user_id'] = $user_id;
+            $_SESSION['user_name'] = $name;
+            $_SESSION['user_email'] = $email;
+
+            // Redirect to home.html after successful login
+            header("Location: home.html");
+            exit();
         } else {
             echo "Invalid password!";
         }
     } else {
-        echo "No user found with this email!";
+        echo "No user found with that email!";
     }
 
     $conn->close();

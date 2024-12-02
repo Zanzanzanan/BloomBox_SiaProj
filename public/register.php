@@ -1,9 +1,11 @@
 <?php
+session_start();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $servername = "localhost";
     $username = "root";  // Your database username
     $password = "";      // Your database password
-    $dbname = "user_db"; // The database you created
+    $dbname = "user_db"; // Your database name
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -21,32 +23,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check if passwords match
     if ($password !== $password_confirm) {
         echo "Passwords do not match!";
-        exit;
+        exit();
     }
 
-    // Hash the password
-    $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+    // Hash the password for security
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Prepare SQL query to check if email exists
-    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    // Insert user into database
+    $sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sss", $name, $email, $hashed_password);
 
-    if ($result->num_rows > 0) {
-        echo "Email already exists!";
-        $stmt->close();
+    if ($stmt->execute()) {
+        // Log the user in by storing session variables
+        $_SESSION['user_id'] = $stmt->insert_id;  // Get the inserted user ID
+        $_SESSION['user_name'] = $name;
+        $_SESSION['user_email'] = $email;
+
+        // Redirect to home.php after successful registration and login
+        header("Location: home.php");
+        exit();
     } else {
-        // Prepare the INSERT statement for new user
-        $stmt = $conn->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $name, $email, $password_hashed);
-
-        if ($stmt->execute()) {
-            echo "Registration successful!";
-        } else {
-            echo "Error: " . $stmt->error;
-        }
-        $stmt->close();
+        echo "Error: " . $stmt->error;
     }
 
     $conn->close();
