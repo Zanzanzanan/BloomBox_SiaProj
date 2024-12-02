@@ -1,6 +1,5 @@
 const switchers = [...document.querySelectorAll('.switcher')];
 
-// Toggle between Login and Sign Up forms
 switchers.forEach(item => {
   item.addEventListener('click', function () {
     switchers.forEach(item => item.parentElement.classList.remove('is-active'));
@@ -8,7 +7,6 @@ switchers.forEach(item => {
   });
 });
 
-// Sign-up form validation
 document.querySelector('.form-signup').addEventListener('submit', function (event) {
   const name = document.getElementById('signup-name').value.trim();
   const email = document.getElementById('signup-email').value.trim();
@@ -27,7 +25,6 @@ document.querySelector('.form-signup').addEventListener('submit', function (even
   }
 });
 
-// Login form validation (optional)
 document.querySelector('.form-login').addEventListener('submit', function (event) {
   const email = document.getElementById('login-email').value.trim();
   const password = document.getElementById('login-password').value;

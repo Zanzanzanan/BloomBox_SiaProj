@@ -19,10 +19,10 @@ body {
 .img-fluid {
     max-width: 100%;
     height: auto;
-    position:absolute; /* Allows overlapping */
-    top: 220px; /* Adjust vertical position */
-    right: 610px; /* Adjust horizontal position */
-    z-index: 2; /* Ensures it appears above other elements */
+    position:absolute; 
+    top: 220px; 
+    right: 610px; 
+    z-index: 2; 
   }
   
 
