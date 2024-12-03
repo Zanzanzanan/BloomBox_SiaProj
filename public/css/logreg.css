@@ -5,7 +5,8 @@
 }
 
 body {
-	font-family: 'Poppins', sans-serif;
+	font-family: "Nunito", sans-serif;
+    font-weight: 400;
 	color: #ffeba7;
 	background-color: #1f2029;
 	overflow: hidden;

@@ -1,6 +1,7 @@
 /* General Styles */
 body {
-    font-family: 'Times New Roman', serif;
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
     margin: 0;
     padding: 0;
     color: #333;
@@ -64,22 +65,49 @@ h1, h2, h3 {
     }
 }
 
-
-
 /* Hero Section */
-header {
-    background-color: #f4f4f4;
+.hero-section {
+    position: relative; /* Ensures child elements like text overlay properly */
+    overflow: hidden;
 }
 
-header h1 {
-    color: #28a745;
-    font-size: 3.5rem;
+.hero-section img {
+    height: 40rem; /* Adjust this value to set the desired height */
+    width: auto; 
 }
 
-header p {
-    color: #555;
-    font-size: 1.2rem;
+.overlay-text {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-100%, -50%);
+    color: #fff780;
+    text-shadow: 2px 2px 8px rgba(10, 182, 33, 0.7);
+    z-index: 10;
+    font-family: "Concert One", sans-serif;
 }
+
+.overlay-text h1 {
+    font-size: 3rem; /* Adjust font size for header */
+    font-weight: bold;
+    color: #fff780;
+}
+
+.overlay-text p {
+    font-size: 1.5rem; /* Adjust font size for paragraph */
+    color: #fff780;
+}
+
+@media (max-width: 768px) {
+    .overlay-text h1 {
+        font-size: 2rem; /* Adjust for smaller screens */
+    }
+
+    .overlay-text p {
+        font-size: 1.2rem;
+    }
+}
+
 
 /* About Section */
 #about {
