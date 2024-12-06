@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/logreg.css">
+  <style>
+    h2.welcome-text {
+      color: #000; 
+      font-size: 25px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+  </style>
 </head>
 <body>
     <img src="../public/assets/images/bloombox10.png" alt="BloomBox Logo" class="img-fluid">
@@ -19,6 +27,7 @@
         <!-- Login Form -->
         <form class="form form-login" method="POST" action="login.php">
           <fieldset>
+            <h2 class="welcome-text">Welcome Back!</h2>
             <legend>Please, enter your email and password for login.</legend>
             <div class="input-block">
               <label for="login-email">E-mail</label>
@@ -41,7 +50,7 @@
         <!-- Registration Form -->
         <form class="form form-signup" method="POST" action="register.php">
             <fieldset>
-              <legend>Please, enter your name, email, password and password confirmation for sign up.</legend>
+              <legend>Please, enter your name, email, password, password confirmation, and address for sign up.</legend>
               <div class="input-block">
                 <label for="signup-name">Name</label>
                 <input id="signup-name" name="signup-name" type="text" required>
@@ -49,6 +58,10 @@
               <div class="input-block">
                 <label for="signup-email">E-mail</label>
                 <input id="signup-email" name="signup-email" type="email" required>
+              </div>
+              <div class="input-block">
+                <label for="signup-address">Street Address</label>
+                <input id="signup-address" name="signup-address" type="text" required>
               </div>
               <div class="input-block">
                 <label for="signup-password">Password</label>
@@ -59,8 +72,8 @@
                 <input id="signup-password-confirm" name="signup-password-confirm" type="password" required>
               </div>
             </fieldset>
-            <button type="submit" class="btn">Continue</button>
-          </form>          
+            <button type="submit" class="btn">Sign Up</button>
+        </form>          
       </div>
     </div>
   </section>
