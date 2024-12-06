@@ -155,12 +155,9 @@ $conn->close();
                     <p class="font-semibold text-lg mb-4">ACCOUNT</p>
                     <ul>
                         <li><a href="profile.php" class="text-sm text-gray-700">Profile</a></li>
-                        <li><a href="#" class="text-sm text-gray-700">Favorite</a></li>
                         <li><a href="#" class="text-sm text-gray-700">Purchases</a></li>
                         <li><a href="#" class="text-sm text-gray-700">Payment Method</a></li>
                         <li><a href="#" class="text-sm text-gray-700">Address</a></li>
-                        <li><a href="#" class="text-sm text-gray-700">My Plants</a></li>
-                        <li><a href="#" class="text-sm text-gray-700">Start Selling</a></li>
                     </ul>
                 </div>
             </div>
