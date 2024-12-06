@@ -138,7 +138,6 @@ $conn->close();
                 <ul class="navbar-nav d-flex justify-content-center w-100">
                     <li class="nav-item"><a class="nav-link" href="home.html#about">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="catalog.html">Catalog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="marketplace.html">Marketplace</a></li>
                     <li class="nav-item"><a class="nav-link" href="profile.php">Account</a></li>
                     <li class="nav-item"><a class="nav-link" href="home.html#community">Community</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Notifications</a></li>
