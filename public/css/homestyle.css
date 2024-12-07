@@ -250,35 +250,6 @@ h1, h2, h3 {
     color: white;
 }
 
-/* Community Section */
-#community {
-    background-color: #e9f7e1;
-}
-
-#community p {
-    font-size: 1.1rem;
-    color: #333;
-}
-
-#community .btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 1.1rem;
-}
-
-#community .btn-success {
-    background-color: #28a745;
-    border: none;
-}
-
-#community .btn-outline-success {
-    color: #28a745;
-    border-color: #28a745;
-}
-
-#community .btn:hover {
-    background-color: #218838;
-}
-
 /* Footer */
 footer {
     background-color: #333;

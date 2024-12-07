@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['user_email'] = $email;
 
         // Redirect to home.php after successful registration and login
-        header("Location: home.php");
+        header("Location: logreg.html");
         exit();
     } else {
         echo "Error: " . $stmt->error;
