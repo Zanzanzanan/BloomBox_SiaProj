@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Care - BloomBox</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/plantcare.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #173231;">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <img src="../public/assets/images/bloombox10.png" alt="BloomBox Logo" class="img-fluid" style="max-height: 50px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalog.html">Catalog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.php">Account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.php">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Plant Care Section -->
+    <section class="plant-care-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Plant Care Tips</h2>
+            <p class="text-center mb-5">Enter the name of your plant to get personalized care tips and advice.</p>
+            
+            <!-- Search form for plant care tips -->
+            <form id="plant-search-form" class="mb-4">
+                <div class="input-group mb-3">
+                    <input type="text" id="plant-name" class="form-control" placeholder="Enter plant name..." aria-label="Plant Name" aria-describedby="basic-addon2">
+                    <button class="btn btn-primary" type="button" id="search-btn">Get Tips</button>
+                </div>
+            </form>
+
+            <!-- Placeholder for displaying plant care tips -->
+            <div id="care-tips">
+                <!-- Care tips will be displayed here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <p>&copy; 2024 BloomBox. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Handle search and display relevant plant care tips
+        document.getElementById('search-btn').addEventListener('click', function() {
+            const plantName = document.getElementById('plant-name').value.trim().toLowerCase();
+            const careTipsContainer = document.getElementById('care-tips');
+
+            if (plantName === 'snake plant') {
+                careTipsContainer.innerHTML = `
+                    <h3>Care Tips for Snake Plant</h3>
+                    <h4>Watering:</h4><p>Water every 2-3 weeks. Let the soil dry out completely before watering again. Avoid overwatering to prevent root rot.</p>
+                    <h4>Light:</h4><p>Prefers bright, indirect light but can tolerate low light conditions. Too much direct sunlight can cause the leaves to burn.</p>
+                    <h4>Soil:</h4><p>Well-draining, sandy or cactus soil. Ensure the pot has proper drainage holes to avoid waterlogging.</p>
+                    <h4>Temperature:</h4><p>Thrives in warm temperatures between 60°F to 85°F. Avoid placing it in a drafty area or near heaters.</p>
+                    <h4>Fertilization:</h4><p>Fertilize once a month during the growing season (spring and summer) with a balanced, water-soluble fertilizer.</p>
+                `;
+            } else if (plantName === 'succulent') {
+                careTipsContainer.innerHTML = `
+                    <h3>Care Tips for Succulent</h3>
+                    <h4>Watering:</h4><p>Water only when the soil is dry to the touch, typically every 1-2 weeks. Ensure that water drains quickly to avoid root rot.</p>
+                    <h4>Light:</h4><p>Needs plenty of direct sunlight to thrive. Place them on windowsills or outdoor areas with full sun exposure.</p>
+                    <h4>Soil:</h4><p>Use well-draining, sandy soil, and avoid overwatering. A cactus mix is ideal.</p>
+                    <h4>Repotting:</h4><p>Repot every 1-2 years or when the potting medium becomes too compact. Choose a slightly larger pot with proper drainage.</p>
+                `;
+            } else if (plantName === 'aloe vera') {
+                careTipsContainer.innerHTML = `
+                    <h3>Care Tips for Aloe Vera</h3>
+                    <h4>Watering:</h4><p>Water once every 3 weeks, allowing the soil to dry out between watering. Overwatering can lead to root rot.</p>
+                    <h4>Light:</h4><p>Prefers bright, indirect sunlight but can tolerate direct sunlight. If grown indoors, place it near a south-facing window.</p>
+                    <h4>Soil:</h4><p>Well-draining soil, preferably cactus or succulent soil. Ensure the pot has drainage holes to avoid water retention.</p>
+                    <h4>Maintenance:</h4><p>Trim the older leaves at the base to keep the plant healthy. Aloe vera can be pruned to encourage new growth.</p>
+                `;
+            } else if (plantName === 'spider plant') {
+                careTipsContainer.innerHTML = `
+                    <h3>Care Tips for Spider Plant</h3>
+                    <h4>Watering:</h4><p>Water moderately, allowing the soil to dry slightly between waterings. Avoid letting the plant sit in water.</p>
+                    <h4>Light:</h4><p>Prefers bright, indirect light but tolerates lower light conditions. Avoid direct sunlight, as it can scorch the leaves.</p>
+                    <h4>Soil:</h4><p>Well-draining, loamy soil. Consider using a peat-based potting mix for optimal results.</p>
+                    <h4>Propagation:</h4><p>Spider plants produce "babies" or offshoots that can be propagated in water or soil. Simply cut off the offshoot and plant it in fresh soil.</p>
+                `;
+            } else if (plantName === 'peace lily') {
+                careTipsContainer.innerHTML = `
+                    <h3>Care Tips for Peace Lily</h3>
+                    <h4>Watering:</h4><p>Water weekly, keeping the soil consistently moist but not soggy. Allow the top inch of soil to dry out before watering again.</p>
+                    <h4>Light:</h4><p>Prefers low to medium indirect light. Too much direct sunlight can cause leaf burn, so keep it out of harsh sun.</p>
+                    <h4>Soil:</h4><p>Well-draining, slightly acidic soil. A mix with organic matter will help maintain moisture while preventing root rot.</p>
+                    <h4>Fertilization:</h4><p>Fertilize once a month during the growing season (spring and summer) with a liquid houseplant fertilizer.</p>
+                `;
+            } else {
+                careTipsContainer.innerHTML = `
+                    <h3>Plant Care Tips</h3>
+                    <p>Sorry, we couldn't find care tips for that plant. Please try another plant name.</p>
+                `;
+            }
+        });
+    </script>
+</bo

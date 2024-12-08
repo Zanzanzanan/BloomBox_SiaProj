@@ -1,99 +1,49 @@
-const trefleApiUrl = 'https://trefle.io/api/v1/plants?token=YOUR_TREFLE_API_TOKEN';
-const fakeStoreApiUrl = 'https://fakestoreapi.com/products';
+const apiKey = 'Hu1TWujSfTRyA1zQtf178TN-Ojw4tK1euhPxOWO9y7k';
+const apiUrl = `https://trefle.io/api/v1/plants?token=${apiKey}`;
+const priceApiUrl = 'plant_prices.php'; // The PHP file that returns plant prices
 
-// Elements
-const productList = document.getElementById('productList');
-const searchInput = document.getElementById('searchInput');
-const filterSelectCycle = document.getElementById('filterSelectCycle');
-const filterSelectWatering = document.getElementById('filterSelectWatering');
-const sortSelect = document.getElementById('sortSelect');
-const loadingIndicator = document.getElementById('loadingIndicator');
+// Fetch the plant prices from the server (plant_prices.php)
+fetch(priceApiUrl)
+  .then(response => response.json())
+  .then(priceData => {
+    const plantPrices = priceData; // The plant price data retrieved from the server
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        const plants = data.data; // Trefle API returns plant data in a 'data' field
+        const productList = document.getElementById('productList');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        
+        // Hide loading indicator once data is loaded
+        loadingIndicator.style.display = 'none';
+        
+        // Clear the product list before adding new data
+        productList.innerHTML = '';
 
-// Fetch Data from APIs
-Promise.all([
-    fetch(trefleApiUrl).then(response => response.json()),
-    fetch(fakeStoreApiUrl).then(response => response.json())
-]).then(([trefleData, fakeStoreData]) => {
-    const treflePlants = trefleData.data;
-    const fakeProducts = fakeStoreData;
+        // Loop through each plant and display it
+        plants.forEach(plant => {
+          const plantPrice = plantPrices[plant.common_name] || 'N/A'; // Get price from the server
 
-    // Combine Trefle and Fake Store Data
-    const combinedData = treflePlants.map((plant, index) => ({
-        name: plant.common_name || plant.scientific_name || 'Unknown Plant',
-        price: fakeProducts[index % fakeProducts.length].price, // Use Fake Store price
-        image: fakeProducts[index % fakeProducts.length].image, // Use Fake Store image
-        cycle: plant.cycle || 'Unknown Cycle',
-        watering: plant.watering || 'Unknown Watering'
-    }));
-
-    // Hide loading indicator
-    loadingIndicator.style.display = 'none';
-
-    // Display combined data
-    displayProducts(combinedData);
-
-    // Add Event Listeners for Search, Filter, and Sort
-    searchInput.addEventListener('input', () => filterAndDisplay(combinedData));
-    filterSelectCycle.addEventListener('change', () => filterAndDisplay(combinedData));
-    filterSelectWatering.addEventListener('change', () => filterAndDisplay(combinedData));
-    sortSelect.addEventListener('change', () => filterAndDisplay(combinedData));
-}).catch(error => {
-    console.error('Error fetching data:', error);
-    loadingIndicator.innerHTML = '<p>Error loading data. Please try again later.</p>';
-});
-
-// Display Products
-function displayProducts(products) {
-    productList.innerHTML = ''; // Clear existing content
-    products.forEach(product => {
-        productList.innerHTML += `
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="${product.image}" class="card-img-top" alt="${product.name}">
-                    <div class="card-body">
-                        <h5 class="card-title">${product.name}</h5>
-                        <p class="card-text">Price: $${product.price}</p>
-                        <p class="card-text">Cycle: ${product.cycle}</p>
-                        <p class="card-text">Watering: ${product.watering}</p>
-                        <button class="btn btn-success">Buy Now</button>
-                    </div>
-                </div>
+          const productCard = document.createElement('div');
+          productCard.classList.add('col-md-3');
+          productCard.innerHTML = `
+            <div class="product-card">
+              <img src="${plant.image_url}" alt="${plant.common_name}" class="img-fluid">
+              <h3>${plant.common_name}</h3>
+              <p><strong>Scientific Name:</strong> ${plant.scientific_name}</p>
+              <p><strong>Price: $${plantPrice}</strong></p>
+              <a href="product-detail.html?plant_id=${plant.id}" class="btn btn-success">View Details</a>
             </div>
-        `;
-    });
-}
-
-// Filter, Search, and Sort
-function filterAndDisplay(products) {
-    let filteredProducts = products;
-
-    // Filter by cycle
-    const cycle = filterSelectCycle.value;
-    if (cycle !== 'all') {
-        filteredProducts = filteredProducts.filter(product => product.cycle === cycle);
-    }
-
-    // Filter by watering
-    const watering = filterSelectWatering.value;
-    if (watering !== 'all') {
-        filteredProducts = filteredProducts.filter(product => product.watering === watering);
-    }
-
-    // Search by name
-    const searchQuery = searchInput.value.toLowerCase();
-    if (searchQuery) {
-        filteredProducts = filteredProducts.filter(product => 
-            product.name.toLowerCase().includes(searchQuery)
-        );
-    }
-
-    // Sort products
-    const sortValue = sortSelect.value;
-    if (sortValue === 'name-asc') {
-        filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (sortValue === 'name-desc') {
-        filteredProducts.sort((a, b) => b.name.localeCompare(a.name));
-    }
-
-    displayProducts(filteredProducts);
-}
+          `;
+          productList.appendChild(productCard);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching plant data:', error);
+        const productList = document.getElementById('productList');
+        productList.innerHTML = '<p>Sorry, something went wrong while fetching plant data. Please try again later.</p>';
+      });
+  })
+  .catch(error => {
+    console.error('Error fetching plant prices:', error);
+  });

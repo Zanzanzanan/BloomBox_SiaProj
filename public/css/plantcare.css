@@ -1,14 +1,7 @@
-/* General Styles */
 body {
-    font-family: "Nunito", sans-serif;
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
+    font-family: 'Rubik', sans-serif;
+    background-color: #f4f7f6;
     color: #333;
-}
-
-h1, h2, h3 {
-    font-weight: bold;
 }
 
 /* Navbar */
@@ -65,49 +58,53 @@ h1, h2, h3 {
     }
 }
 
-.navbar-nav .nav-link.active {
-    background-color: #117a65;
-    border-radius: 5px;
+.plant-care-section {
+    background-color: #ffffff;
+    padding: 40px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Header */
-header {
-    background-color: #f8f9fa;
-    padding: 60px 0;
+h2 {
+    font-weight: 700;
+    color: #173231;
 }
 
-header h1 {
-    color: #28a745;
+h3 {
+    color: #173231;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
-header p {
-    color: #555;
+h4 {
+    font-weight: 600;
+    color: #ff7f50;
+    margin-top: 15px;
 }
 
-/* Plant Listing Section */
-.card {
-    border: none;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.card-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-}
-
-.card-text {
+p {
     font-size: 1rem;
-    color: #555;
+    line-height: 1.6;
 }
 
-/* Footer */
+input[type="text"] {
+    border-radius: 8px;
+    border: 1px solid #d3d3d3;
+}
+
+button {
+    background-color: #ff7f50;
+    border: none;
+    border-radius: 8px;
+    color: white;
+}
+
+button:hover {
+    background-color: #e76f4c;
+}
+
 footer {
     background-color: #173231;
-    color: #fff;
-    font-size: 0.9rem;
+    color: #ffffff;
+    font-size: 0.875rem;
 }
