@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/order.css">
+
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Order Page</h1>
+        <form id="orderForm">
+            <table id="orderTable">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Product</th>
+                        <th>Unit Price</th>
+                        <th>Quantity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" name="select"></td>
+                        <td>Highchair</td>
+                        <td>₱10.00</td>
+                        <td>
+                            <button type="button" class="minus-button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="number" value="1" min="1">
+                            <button type="button" class="plus-button" onclick="increaseQuantity(this)">+</button>
+                        </td>
+                        <td><button type="button" class="delete-button" onclick="deleteRow(this)">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="select"></td>
+                        <td>Tahunan</td>
+                        <td>₱15.00</td>
+                        <td>
+                            <button type="button" class="minus-button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="number" value="1" min="1">
+                            <button type="button" class="plus-button" onclick="increaseQuantity(this)">+</button>
+                        </td>
+                        <td><button type="button" class="delete-button" onclick="deleteRow(this)">Delete</button></td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+            <button type="submit" class="order-button">Order</button>
+        </form>
+    </div>
+
+    <script src="order.js"></script>
+</body>
+</html>

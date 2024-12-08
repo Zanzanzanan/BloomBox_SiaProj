@@ -1,0 +1,70 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    padding: 20px;
+}
+h1 {
+    margin-bottom: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+th {
+    background-color: rgb(170, 170, 170);
+    color: white;
+}
+button {
+    padding: 5px 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #004080;
+}
+.delete-button {
+    background-color: red;
+}
+.delete-button:hover {
+    background-color: #cc0000;
+}
+.minus-button {
+    background-color: red;
+}
+.minus-button:hover {
+    background-color: #cc0000;
+}
+.plus-button {
+    background-color: blue;
+}
+.plus-button:hover {
+    background-color: #004080;
+}
+.order-button {
+    background-color: green;
+}
+.order-button:hover {
+    background-color: #006400;
+}
