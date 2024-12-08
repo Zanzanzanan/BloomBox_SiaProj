@@ -30,6 +30,8 @@ if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
     $name = $user['name'];
     $email = $user['email'];
+    $address = $user['address'];
+
     $profilePhoto = $user['profile_photo'] ? $user['profile_photo'] : "https://ui-avatars.com/api/?name=" . urlencode($name) . "&color=7F9CF5&background=EBF4FF";
 } else {
     // Handle case where no user found
@@ -138,10 +140,7 @@ $conn->close();
                 <ul class="navbar-nav d-flex justify-content-center w-100">
                     <li class="nav-item"><a class="nav-link" href="home.html#about">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="catalog.html">Catalog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="profile.php">Account</a></li>
-                    <li class="nav-item"><a class="nav-link" href="home.html#community">Community</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -157,7 +156,6 @@ $conn->close();
                         <li><a href="profile.php" class="text-sm text-gray-700">Profile</a></li>
                         <li><a href="#" class="text-sm text-gray-700">Purchases</a></li>
                         <li><a href="#" class="text-sm text-gray-700">Payment Method</a></li>
-                        <li><a href="#" class="text-sm text-gray-700">Address</a></li>
                     </ul>
                 </div>
             </div>
@@ -199,6 +197,11 @@ $conn->close();
                                 <input type="text" class="form-control" id="email" value="<?= htmlspecialchars($email) ?>" disabled />
                             </div>
                         </div>
+
+                        <div class="col-md-8 mb-4">
+    <label for="user-address" class="form-label">Address</label>
+    <input type="text" class="form-control" id="user-address" value="<?= htmlspecialchars($address) ?>" disabled />
+</div>
 
                         <!-- Save Button -->
                         <div class="d-flex justify-content-end">

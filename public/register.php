@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['signup-email'];
     $password = $_POST['signup-password'];
     $password_confirm = $_POST['signup-password-confirm'];
+    $address = $_POST['signup-address']; // Retrieve the address
 
     // Check if passwords match
     if ($password !== $password_confirm) {
@@ -30,9 +31,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Insert user into database
-    $sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO users (name, email, password, address) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sss", $name, $email, $hashed_password);
+    $stmt->bind_param("ssss", $name, $email, $hashed_password, $address);
 
     if ($stmt->execute()) {
         // Log the user in by storing session variables
